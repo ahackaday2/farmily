@@ -22,5 +22,9 @@
     },
     "icons": {
         "16": "/images/whee.png"
-    }
+    },
+    "host_permissions": [
+    "*://*/*"
+    ]
+    
 }
