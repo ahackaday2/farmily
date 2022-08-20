@@ -1,6 +1,6 @@
 {
-    "name": "Getting Started Example",
-    "description": "Build an Extension!",
+    "name": "FARMily",
+    "description": "Manage your mental health and wellbeing with the help of your farm animal friends!",
     "version": "1.0",
     "manifest_version": 3,
     "background": {
@@ -8,8 +8,10 @@
     },
     "permissions": [
         "storage",
+        "tabs",
         "activeTab",
-        "scripting"
+        "scripting",
+        "notifications"
     ],
     "options_page": "options.html",
     "action": {
