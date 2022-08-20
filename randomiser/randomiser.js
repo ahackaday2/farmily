@@ -4,7 +4,7 @@ var isTip = false;
 var id = 0;
 
 function getQuotes() {
-    var displayText = document.getElementById('hello');
+    var displayText = document.getElementById('textStatement');
     //var displaySetting = displayText.style.display;
     displayText.style.display = 'block';
     
@@ -50,7 +50,7 @@ function getQuotes() {
 }
 
 function getJokes() {
-    var displayText = document.getElementById('hello');
+    var displayText = document.getElementById('textStatement');
     displayText.style.display = 'block';
     
     var newJoke = '';
@@ -95,7 +95,7 @@ function getJokes() {
 }
 
 function getTips() {
-    var displayText = document.getElementById('hello');
+    var displayText = document.getElementById('textStatement');
     //var displaySetting = displayText.style.display;
     displayText.style.display = 'block';
     

@@ -20,6 +20,10 @@
     text-align: center;
 }
 
+#header {
+    text-align: center;
+}
+
 #quotes, #jokes, #tips {
     background-color: aquamarine;
     margin: 5%;
@@ -28,6 +32,7 @@
     font-size: 18px;
 }
 
-#hello {
+#textStatement {
     display: none;
+    font-size: x-large;
 }
