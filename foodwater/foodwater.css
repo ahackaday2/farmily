@@ -47,7 +47,6 @@
   height: 25px;
   left: 41px;
   top: 219px;
-
 }
 
 /* watericon */
@@ -60,28 +59,12 @@
   top: 180px;
 }
 
-.water-btn {
-  position: absolute;
-  width: 85px;
-  height: 30px;
-
-  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
-}
-
-.food-btn {
-  position: absolute;
-  width: 85px;
-  height: 30px;
-
-  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
-}
-
 /* Remember to feed the animals! */
 .instruction-txt {
   position: absolute;
   width: 250px;
   height: 23px;
-  left: 56px;
+  left: 48px;
   top: 267px;
 
   font-family: "ABeeZee";
@@ -138,7 +121,6 @@
   100% {
     transform: translateX(-50px) scaleX(1);
   }
-  
 }
 
 .water-img {
@@ -147,7 +129,6 @@
   height: 64px;
   left: 183px;
   top: 89px;
-
 }
 
 .food-img {
@@ -164,7 +145,7 @@
   position: absolute;
   width: 84.68px;
   height: 35px;
-  left: 43px;
+  left: 170px;
   top: 300px;
 
   font-family: "ABeeZee";
@@ -180,19 +161,26 @@
   cursor: pointer;
   color: #000000;
   text-decoration: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none;
+
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
 }
 .food-btn:hover {
   background-color: #4ec23a;
 }
 .food-btn:active {
   margin-top: 2px;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
 }
 
 .water-btn {
   position: absolute;
   width: 86px;
   height: 35px;
-  left: 170.21px;
+  left: 43px;
   top: 300px;
 
   font-family: "ABeeZee";
@@ -207,10 +195,17 @@
   cursor: pointer;
   color: #000000;
   text-decoration: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none;
+
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
 }
 .water-btn:hover {
   background-color: #45b0d1;
 }
 .water-btn:active {
   margin-top: 2px;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
 }
