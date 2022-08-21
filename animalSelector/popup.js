@@ -17,7 +17,7 @@ window.onload = function () {
             i++;
         }
 
-        animalImage.src = "./images/" + animals[i] + ".png";
+        animalImage.src = "../images/" + animals[i] + ".png";
     });
 
     forwardButton.addEventListener("click", () => {
@@ -28,7 +28,7 @@ window.onload = function () {
             i--;
         }
 
-        animalImage.src = "./images/" + animals[i] + ".png";
+        animalImage.src = "../images/" + animals[i] + ".png";
     });
 
     submitButton.addEventListener("click", () => {
