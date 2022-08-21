@@ -12,7 +12,7 @@ pomodoro.addEventListener("click", async () => {
 
 let jokes = document.getElementById("jokes-btn");
 jokes.addEventListener("click", async () => {
-  window.location.href = "../jokes/jokes.html";
+  window.location.href = "../randomiser/popup.html";
 });
 
 let animalselect = document.getElementById("animalselect-btn");
