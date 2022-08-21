@@ -17,11 +17,11 @@
     "action": {
         "default_popup": "/homepopup/popup.html",
         "default_icon": {
-            "16": "/images/cow.png"
+            "16": "/images/icon.png"
         }
     },
     "icons": {
-        "16": "/images/cow.png"
+        "16": "/images/icon.png"
     },
     "host_permissions": [
         "*://*/*"
@@ -45,7 +45,10 @@
             "resources": [
                 "images/cow.png",
                 "images/sheep.png",
-                "images/pig.png"
+                "images/pig.png",
+                "images/cow-walk.gif",
+                "images/sheep-walk.gif",
+                "images/pig-walk.gif"
             ],
             "matches": [
                 "https://*/*"

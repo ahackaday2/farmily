@@ -68,16 +68,16 @@ function addAnimalToPage() {
 
       switch (animal) {
         case "cow":
-          searchUrl = "../images/cow.png";
+          searchUrl = "../images/cow-walk.gif";
           break;
         case "sheep":
-          searchUrl = "../images/sheep.png";
+          searchUrl = "../images/sheep-walk.gif";
           break;
         case "pig":
-          searchUrl = "../images/pig.png";
+          searchUrl = "../images/pig-walk.gif";
           break;
         default:
-          searchUrl = "../images/cow.png";
+          searchUrl = "../images/cow-walk.gif";
       }
 
       var imgURL = chrome.runtime.getURL(searchUrl);
