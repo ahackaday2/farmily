@@ -1,12 +1,13 @@
 # FARMily <3
 
-* Following the Chrome Getting Started tutorial: https://developer.chrome.com/docs/extensions/mv3/getstarted/
+* Following the [Chrome Getting Started tutorial](https://developer.chrome.com/docs/extensions/mv3/getstarted/)
 
 ## Usage
 As the chrome web store developer account is blocked by paywall, the only way to get this extension is to install it manually.
 
 ### 1) Clone this repo!
 Click on the "Code" tab as seen in the picture, and click on any of the options to get this repo on your computer!
+<br/>
 ![image](https://user-images.githubusercontent.com/57038559/185785772-5e8ddc0c-c7ec-4a6e-ba83-73de2d82e89e.png)
 
 
