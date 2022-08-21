@@ -33,9 +33,10 @@
                 "https://*/*"
             ],
             "js": [
-                "content-script.js"
+                "/freeroam/freeroam.js"
             ],
             "css": [
+                "/freeroam/freeroam.css"
             ]
         }
     ],
