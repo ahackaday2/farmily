@@ -1,24 +1,46 @@
-// Initialize button with user's preferred color
-let changeColor = document.getElementById("changeColor");
+const animals = ["cow", "pig", "sheep"];
 
-chrome.storage.sync.get("color", ({ color }) => {
-  changeColor.style.backgroundColor = color;
-});
+let i = 0;
 
-// When the button is clicked, inject setPageBackgroundColor into current page
-changeColor.addEventListener("click", async () => {
-    let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-  
-    chrome.scripting.executeScript({
-      target: { tabId: tab.id },
-      function: setPageBackgroundColor,
+window.onload = function () {
+    const forwardButton = document.getElementById("forward");
+    const nextButton = document.getElementById("next");
+    const animalImage = document.getElementById("animal");
+    const selectButton = document.getElementById("selectButton");
+    const container = document.getElementById("animalSelector");
+
+    nextButton.addEventListener("click", () => {
+        console.log("next");
+        if (i + 1 == 3) {
+            i = 0;
+        } else {
+            i++;
+        }
+
+        animalImage.src = "./images/" + animals[i] + ".png";
     });
-  });
-  
-  // The body of this function will be executed as a content script inside the
-  // current page
-  function setPageBackgroundColor() {
-    chrome.storage.sync.get("color", ({ color }) => {
-      document.body.style.backgroundColor = color;
+
+    forwardButton.addEventListener("click", () => {
+        console.log("forward");
+        if (i - 1 == -1) {
+            i = 2;
+        } else {
+            i--;
+        }
+
+        animalImage.src = "./images/" + animals[i] + ".png";
     });
-  }
+
+    selectButton.addEventListener("click", () => {
+        nextButton.style.display = "none";
+        forwardButton.style.display = "none";
+        selectButton.style.display = "none";
+
+        chrome.storage.sync.set({ animal: animals[i] });
+        chrome.storage.sync.get("animal", (result) => { console.log(result)});
+        let div = document.createElement("div");
+        div.innerHTML = "You have selected " + animals[i];
+        container.appendChild(div);
+    });
+};
+
