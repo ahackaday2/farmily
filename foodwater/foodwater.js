@@ -44,6 +44,40 @@ window.onload = function () {
       document.getElementsByClassName("food-bar")[0].style.width = newWidth;
     }
   });
+
+  let animalImage = document.getElementById("animal-img");
+
+  chrome.storage.sync.get("animal", ({ animal }) => {
+    console.log(animal);
+
+    switch (animal) {
+      case "cow":
+        searchUrl = "../images/cow.png";
+        break;
+      case "sheep":
+        searchUrl = "../images/sheep.png";
+        break;
+      case "pig":
+        searchUrl = "../images/pig.png";
+        break;
+      default:
+        searchUrl = "../images/cow.png";
+    }
+
+    var imgURL = chrome.runtime.getURL(searchUrl);
+
+    animalImage.src = imgURL;
+
+    chrome.storage.sync.get("name", ({ name }) => {
+      console.log(name);
+
+      if (name == "") {
+        name = animal;
+      } else {
+        document.getElementById("name").innerHTML = name;
+      }
+    });
+  });
 };
 
 let foodBtn = document.getElementById("food-btn");
@@ -129,6 +163,8 @@ var intervalId = window.setInterval(function () {
   refreshFoodLevel();
 }, 3000);
 
-
 const homeButton = document.getElementById("homeButton");
-homeButton.addEventListener("click", () => window.location.href = "../homepopup/popup.html");
+homeButton.addEventListener(
+  "click",
+  () => (window.location.href = "../homepopup/popup.html")
+);

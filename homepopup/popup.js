@@ -86,10 +86,6 @@ function addAnimalToPage() {
       this.farmanimal.src = imgURL;
 
       document.body.appendChild(this.farmanimal);
-
-      var div = document.createElement("div");
-      document.body.appendChild(div);
-      div.innerText = "test123";
     });
   } catch {
     console.log("no animal saved");
