@@ -60,14 +60,24 @@ body {
     border: none;
 }
 
-input,
-label {
+input, label {
     font-family: ABeeZee;
     font-size: 15px;
     align-items: center;
     display: flex;
+    width: 80%;
 }
 
 .top {
     align-self: flex-start;
+}
+
+.submit {
+    align-self: flex-end;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
