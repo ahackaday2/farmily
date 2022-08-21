@@ -1,77 +1,78 @@
-
-// Required variables
-
-var session_seconds = "00";
-var session_minutes = 25;
-
-// Audio files
-// var click_sound = new Audio("sounds/click.mp3");
-// var bell = new Audio("sounds/bell.mp3");
+var elapsedTime=0;
+var first_click=false;
 
 // Global Variables
 var minutes_interval;
 var seconds_interval;
-var first_click = true;
-var second_click = false;
-var third_click = false;
 
 // Starting template for the timer
-document.getElementById("myTemplate").onload = function() {
-  document.getElementById("minutes").innerHTML = session_minutes;
-  document.getElementById("seconds").innerHTML = session_seconds;
+window.onload = function() {
+  chrome.storage.sync.get("initial_time", function (result) {
+    if (result.initial_time == null) {
+      chrome.storage.sync.set({ initial_time: Date.now() });
+    }
+    elapsedTime=(Date.now()-result.initial_time);
+    remaining_session_minutes = ((25*60000-elapsedTime)/60000).toFixed(2);
+    remaining_session_seconds = (((25*60000-elapsedTime)%60000)/1000).toFixed(2);
+  });
+  document.getElementById("minutes").innerHTML = remaining_session_minutes;
+  document.getElementById("seconds").innerHTML = remaining_session_seconds;
+  console.log("smth");
+  let playButton = document.getElementById("myButton");
+  playButton.addEventListener("click", playPause);
+  first_click=true;
 };
 
-document.getElementById("myButton").onclick = function() {
-  //PAUSE & PLAY FEATURE
-  if (first_click && !second_click && !third_click) {
-      // click_sound.play();
-      first_click = false;
-      // Change the minutes and seconds to starting time
-      session_minutes = 24;
-      session_seconds = 59;
-      // Start the countdown
-      // minutes_interval = setInterval(minutesTimer, 60000); //60s
-      seconds_interval = setInterval(secondsTimer, 1000);  //1s
-      second_click = true;
-  } else if (second_click && !third_click) { //PAUSE
-    clearInterval(minutes_interval);
-    clearInterval(seconds_interval);
-    // click_sound.play();
-    first_click = false;
-    second_click = false;
-    third_click = true;
-  } else if (third_click && !second_click) { //RESUME
-    // minutes_interval = setInterval(minutesTimer, 60000); //60s
-    seconds_interval = setInterval(secondsTimer, 1000);  //1s
-    // click_sound.play();
-    first_click = false;
-    second_click = true;
-    third_click = false;
-  }
-    
-  // Add the seconds and minutes to the page
-  document.getElementById("minutes").innerHTML = session_minutes;
-  document.getElementById("seconds").innerHTML = session_seconds;
+function playPause() {
+    chrome.storage.sync.get("initial_time", function (result) {
+      if (first_click) {
+        chrome.storage.sync.set({ initial_time: Date.now() });
+        first_click=false;
+      }
+      elapsedTime=(Date.now()-result.initial_time);
+      remaining_session_minutes = ((25*60000-elapsedTime)/60000).toFixed(0);
+      remaining_session_seconds = (((25*60000-elapsedTime)%60000)/1000).toFixed(0);
+
+      document.getElementById("minutes").innerHTML = remaining_session_minutes;
+      document.getElementById("seconds").innerHTML = remaining_session_seconds;
+      if (remaining_session_seconds <= 0) {
+        if (remaining_session_minutes <= 0) {
+
+          // Add the message to the html
+          document.getElementById("done").innerHTML =
+            "Session Completed!! You've worked hard:) Now you can take a break!";
+
+          // Play the bell sound to tell the end of session
+          // bell.play();
+          // Reset the session seconds to 60
+          document.getElementById("seconds").innerHTML = remaining_session_seconds;
+          document.getElementById("minutes").innerHTML = remaining_session_minutes;
+
+          // Make the html message div visible
+          document.getElementById("done").classList.add("show_message");
+        }
+      }
+    });
+}
+
+var intervalId = window.setInterval(function () {
+  playPause();
+}, 1000);
 
   // Functions
-  // Function for minute counter
-  // function minutesTimer() {
-  //   session_minutes = session_minutes - 1;
-  //   document.getElementById("minutes").innerHTML = session_minutes;
-  // }
 
   // Function for second counter
   function secondsTimer() {
-    session_seconds = session_seconds - 1;
-    document.getElementById("seconds").innerHTML = session_seconds;
+    remaining_session_minutes = (25*60000-elapsedTime)/60000;
+    remaining_session_seconds = (25*60000-elapsedTime)%60000;
 
-    // Check if the seconds and minutes counter has reached 0
-    // If reached 0 then end the session
-    if (session_seconds <= 0) {
-      if (session_minutes <= 0) {
-        // Clears the interval i.e. stops the counter
-        clearInterval(minutes_interval);
-        clearInterval(seconds_interval);
+    // Add the seconds and minutes to the page
+    document.getElementById("minutes").innerHTML = remaining_session_minutes;
+    document.getElementById("seconds").innerHTML = remaining_session_seconds;
+
+
+    if (remaining_session_seconds <= 0) {
+      if (remaining_session_minutes <= 0) {
 
         // Add the message to the html
         document.getElementById("done").innerHTML =
@@ -79,27 +80,13 @@ document.getElementById("myButton").onclick = function() {
 
         // Play the bell sound to tell the end of session
         // bell.play();
-        first_click = false;
-        second_click = false;
-        third_click = false;
-
         // Reset the session seconds to 60
-        document.getElementById("seconds").innerHTML = session_seconds;
-        document.getElementById("minutes").innerHTML = session_minutes;
+        document.getElementById("seconds").innerHTML = remaining_session_seconds;
+        document.getElementById("minutes").innerHTML = remaining_session_minutes;
 
         // Make the html message div visible
         document.getElementById("done").classList.add("show_message");
       }
     }
-    // If minute needs to decrement by 1
-    if (session_seconds <= -1 && session_minutes > 0) {
-      // Reset the session seconds to 60
-      session_seconds = 59;
-      document.getElementById("seconds").innerHTML = session_seconds;
-
-      session_minutes = session_minutes - 1;
-      document.getElementById("minutes").innerHTML = session_minutes;
-    }
-  }
 }
 // });

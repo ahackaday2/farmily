@@ -29,7 +29,7 @@ body {
 
 /* So that the data inside the circle is not overflowing */
 .row {
-  width: 90%;
+  width: 100%;
 }
 
 /* remove the padding on the play button */
