@@ -33,10 +33,10 @@
                 "https://*/*"
             ],
             "js": [
-                "/freeroam/freeroam.js"
+                "freeroam/freeroam.js"
             ],
             "css": [
-                "/freeroam/freeroam.css"
+                "freeroam/freeroam.css"
             ]
         }
     ],

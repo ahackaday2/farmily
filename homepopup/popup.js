@@ -30,8 +30,6 @@ freeroam.addEventListener("click", async () => {
     target: { tabId: tab.id },
     function: setPageBackgroundColor,
   });
-
-  // window.location.href="../newpopup/new.html";
 });
 
 // The body of this function will be executed as a content script inside the
@@ -39,9 +37,10 @@ freeroam.addEventListener("click", async () => {
 function setPageBackgroundColor() {
   chrome.storage.sync.get("color", ({ color }) => {
     document.body.style.backgroundColor = color;
+    var searchUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"
 
     // get saved animal
-    await chrome.storage.sync.get("animal", ({ animal }) => {
+    chrome.storage.sync.get("animal", ({ animal }) => {
       console.log( animal );
 
       switch (animal) {
@@ -59,21 +58,21 @@ function setPageBackgroundColor() {
 
       }
 
-      var imgURL = chrome.runtime.getURL(searchUrl);
-      document.getElementsByTagName("img")[0].src = imgURL;
+      var imgURL = chrome.runtime.getURL("images/cow.png");
+      this.farmanimal = document.createElement("img");
+      this.farmanimal.setAttribute("id", "farmily-animal");
+      this.farmanimal.src = imgURL
+
+      document.body.appendChild(this.farmanimal);
+      
+      // document.getElementsByTagName("section")[0].appendChild(this.cat);
+
+      // document.getElementsByTagName("img")[0].src = imgURL;
+
+      var div = document.createElement("div");
+      document.body.appendChild(div);
+      div.innerText = "test123";
 
     });
-
-
-    this.cat = document.createElement("img");
-    this.cat.setAttribute("id", "farmily-animal");
-    this.cat.src = imgURL
-    // this.cat.src = chrome.runtime.getURL("images/sheep.png");
-
-    document.getElementsByTagName("section")[0].appendChild(this.cat);
-
-    var div = document.createElement("div");
-    document.body.appendChild(div);
-    div.innerText = "test123";
   });
 }
