@@ -1,10 +1,7 @@
 // background.js
 
-let color = '#3aa757';
-
+// any function that needs to run first thing when the popup is opened
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.storage.sync.set({ color });
-  console.log('Default background color set to %c/green', `color: ${color}`);
 
 
 });
