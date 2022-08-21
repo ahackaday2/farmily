@@ -5,6 +5,8 @@
   left: 47vw;
   bottom: 0px;
 
+  z-index: 99 !important;
+
   animation-name: animalWalk;
   animation-duration: 10s;
   animation-iteration-count: infinite;
