@@ -39,6 +39,7 @@ function setPageBackgroundColor() {
     document.body.style.backgroundColor = color;
     var searchUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"
 
+    try {
     // get saved animal
     chrome.storage.sync.get("animal", ({ animal }) => {
       console.log( animal );
@@ -74,5 +75,11 @@ function setPageBackgroundColor() {
       div.innerText = "test123";
 
     });
+
+    } catch {
+      console.log("no animal saved");
+    }
+
   });
+
 }
