@@ -3,12 +3,14 @@ const animals = ["cow", "pig", "sheep"];
 let i = 0;
 
 window.onload = function () {
+    const homeButton = document.getElementById("homeButton");
     const forwardButton = document.getElementById("forward");
     const nextButton = document.getElementById("next");
     const animalImage = document.getElementById("animal");
     const submitButton = document.getElementById("submitButton");
-    const container = document.getElementById("animalSelector");
-    const form = document.getElementById('animalForm');
+    const name = document.getElementById("name");
+
+    homeButton.addEventListener("click", () => window.location.href = "../homepopup/popup.html");
 
     nextButton.addEventListener("click", () => {
         if (i + 1 == 3) {
@@ -32,14 +34,10 @@ window.onload = function () {
     });
 
     submitButton.addEventListener("click", () => {
-        /* nextButton.style.display = "none";
+        nextButton.style.display = "none";
         forwardButton.style.display = "none";
         submitButton.style.display = "none";
- */
         chrome.storage.sync.set({ animal: animals[i] });
-        chrome.storage.sync.get("animal", (result) => { console.log(result)});
-        let div = document.createElement("div");
-        //div.innerHTML = "You have selected " + animals[i];
-        container.appendChild(div);
+        chrome.storage.sync.set({ name: name.value });
     });
 };

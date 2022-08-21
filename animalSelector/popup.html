@@ -13,22 +13,16 @@
     />
   </head>
   <body>
-<!--     <div id="timerContainer">
-      <p id="timer">25:00</p>
-      <p id="Timer">
-        <p id="countdown" class="countdown"></p>
-        </p>
-    </div>
-    <button type="button" id="start" class="btn btn-outline-light">Start</button> -->
-    <h1>Choose your farmily pet!</h1>
+    <button id="homeButton" class="button top"><i class="fa fa-home"></i>&emsp;Back to Home</button>
+    <h1>Choose your FARMily pet!</h1>
     <form id="animalForm">
       <div id="animalSelector">
-        <button type="button" id="forward"><</button>
+        <button class="button" type="button" id="forward"><</button>
         <img id="animal" src="../images/cow.png">
-        <button type="button" id="next">></button>
+        <button class="button" type="button" id="next">></button>
       </div>
       <label for="name" >Name: </label>
-      <input type="text" name="name" id="name" required>
+      <input type="text" name="name" id="name">
     </form>      
     <button class="button" type="button" id="submitButton"><i class="fa fa-check"></i></button>
     <script src="popup.js"></script>
