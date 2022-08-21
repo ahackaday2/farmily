@@ -1,25 +1,26 @@
 /* Body background and font */
 body {
-  background: #272343;
-  font-family: "Pacifico", cursive;
-}
-
-.done {
-  font-family: "Pacifico";
+  background: #fbf8b5;
+  text-align: center;
+  width: 300px;
+  height: 350px;
+  left: 521px;
+  top: 257px;
+  border-radius: 23px;
+  font-family: "ABeeZee";
 }
 
 /* Main heading */
 .heading {
-  color: #bae8e8;
+  color: #000000;
 }
 
 /* Countdown timer */
 .timer {
-  color: #ffffff;
   text-align: center;
-  width: 20rem;
-  height: 20rem;
-  border: 5px solid #fff;
+  width: 10rem;
+  height: 10rem;
+  border: 5px solid #000;
   border-radius: 10rem;
   display: flex;
   justify-content: center; /*horizontally*/
@@ -28,7 +29,7 @@ body {
 
 /* So that the data inside the circle is not overflowing */
 .row {
-  width: 100%;
+  width: 90%;
 }
 
 /* remove the padding on the play button */
@@ -38,17 +39,18 @@ body {
 
 /* play and reset icons */
 .fa-play,
-.fa-redo-alt {
-  color: #e3f6f5;
+.fa-redo-alt,
+.fa-return {
   border: 2px solid transparent;
   padding: 1rem;
   border-radius: 2rem;
 }
 
 .fa-play:hover,
-.fa-redo-alt:hover {
-  color: #bae8e8;
-  border: 2px solid #bae8e8;
+.fa-redo-alt:hover,
+.fa-return:hover {
+  color: #51e5e5;
+  border: 2px solid #000000;
   transition: 0.3s ease;
 }
 
