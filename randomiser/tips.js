@@ -1,10 +1,11 @@
 function getTips() {
     var displayText = document.getElementById('textStatement');
-    //var displaySetting = displayText.style.display;
     displayText.style.display = 'block';
     
     var newTip = '';
-    var id = Math.floor(Math.random() * (10) + 0);
+    var max = 9;
+    var min = 0;
+    var id = Math.floor(Math.random() * (max - min + 1) + min);
 
     switch(id) {
         case 0:
