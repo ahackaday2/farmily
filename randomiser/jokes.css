@@ -1,0 +1,38 @@
+#body {
+    /* background-image: url('../main/assets/images/amazon.jpg'); */
+    
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+
+    background-color: bisque;
+
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+    
+    text-align: center;
+}
+
+#header {
+    text-align: center;
+}
+
+#jokes {
+    background-color: aquamarine;
+    margin: 5%;
+    width: 50%;
+    height: 20%;
+    font-size: 18px;
+}
+
+#textStatement {
+    display: none;
+    font-size: x-large;
+}

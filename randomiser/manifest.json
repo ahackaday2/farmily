@@ -1,0 +1,22 @@
+{
+    "name": "Randomiser",
+    "description": "This extension gives you random quotes, jokes or tips.",
+    "manifest_version": 3,
+    "version": "1.0", 
+
+    "permissions": [
+        "storage"
+    ],
+
+    "action": {
+        "default_icon": "icon16.png",
+        "default_popup": "popup.html"
+    },
+
+    
+    "icons": {
+        "128": "icon128.png",
+        "48": "icon48.png",
+        "16": "icon16.png"
+    }
+}
