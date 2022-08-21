@@ -17,10 +17,39 @@
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "/images/whee.png"
+            "16": "/images/cow.png"
         }
     },
     "icons": {
         "16": "/images/whee.png"
-    }
+    },
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "content-script.js"
+            ],
+            "css": [
+                "my-styles.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "images/cow.png",
+                "images/sheep.png"
+            ],
+            "matches": [
+                "https://*/*"
+            ],
+            "use_dynamic_url": true
+        }
+    ]
 }
