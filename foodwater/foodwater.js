@@ -15,6 +15,8 @@ window.onload = function () {
         ((waterMax - (Date.now() - result.waterleveltime)) / waterMax) * 188 +
         "px";
 
+      checkWater(result.waterleveltime, Date.now());
+
       if (result.waterleveltime + waterMax < Date.now()) {
         // if water level time is greater than water max time, reset water level time
         newWidth = "0px";
@@ -32,6 +34,8 @@ window.onload = function () {
       let newWidth =
         ((foodMax - (Date.now() - result.foodleveltime)) / foodMax) * 188 +
         "px";
+
+      checkFood(result.foodleveltime, Date.now());
 
       if (result.foodleveltime + foodMax < Date.now()) {
         // if food level time is greater than food max time, reset food level time

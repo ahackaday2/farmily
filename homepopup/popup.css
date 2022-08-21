@@ -1,11 +1,51 @@
-body {
-  width: 300px;
-  height: 350px;
-  left: 521px;
-  top: 257px;
-
-  background: #fbf8b5;
+.popup-container {
   text-align: center;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   border-radius: 23px;
+}
+
+/* BUTTONS */
+
+.btn {
+  margin: 10px;
+
+  width: 180px;
+  height: 30px;
+  left: 170px;
+  top: 300px;
+
+  font-family: "ABeeZee";
+  font-size: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #65dd52;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none;
+
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+}
+.btn:hover {
+  background-color: #4ec23a;
+}
+.btn:active {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
 }
