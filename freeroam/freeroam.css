@@ -1,32 +1,34 @@
-.farmily-animal {
+#farmily-animal {
+  position: fixed;
   width: 100px;
   height: 100px;
   left: 47vw;
   bottom: 0px;
 
   animation-name: animalWalk;
-  animation-duration: 5s;
+  animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }
 
 @keyframes animalWalk {
   0% {
-    transform: translateX(-50px) scaleX(1);
+    transform: translateX(-40vw) scaleX(1);
   }
   1% {
-    transform: translateX(-50px) scaleX(-1);
+    transform: translateX(-40vw) scaleX(-1);
   }
 
   49% {
-    transform: translateX(50px) scaleX(-1);
+    transform: translateX(40vw) scaleX(-1);
   }
 
   50% {
-    transform: translateX(50px) scaleX(1);
+    transform: translateX(40vw) scaleX(1);
   }
 
   100% {
-    transform: translateX(-50px) scaleX(1);
+    transform: translateX(-40vw) scaleX(1);
   }
 }
+

@@ -128,3 +128,7 @@ var intervalId = window.setInterval(function () {
   refreshWaterLevel();
   refreshFoodLevel();
 }, 3000);
+
+
+const homeButton = document.getElementById("homeButton");
+homeButton.addEventListener("click", () => window.location.href = "../homepopup/popup.html");
