@@ -1,10 +1,8 @@
 #body {
-    /* background-image: url('../main/assets/images/amazon.jpg'); */
-    
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+    width: 300px;
+    height: 350px;
+    top: 521px;
+    left: 257px;
 
     background-color: bisque;
 
@@ -22,6 +20,7 @@
 
 #header {
     text-align: center;
+    font-style: oblique;
 }
 
 #quotes {
@@ -34,5 +33,9 @@
 
 #textStatement {
     display: none;
-    font-size: x-large;
+    font-size: 18px;
+}
+
+#back, #quote {
+    margin: 5%;
 }

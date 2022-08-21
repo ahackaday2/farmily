@@ -1,13 +1,11 @@
-var id = 0;
-
 function getQuotes() {
     var displayText = document.getElementById('textStatement');
-    //var displaySetting = displayText.style.display;
     displayText.style.display = 'block';
     
     var newQuote = '';
+    var id = Math.floor(Math.random() * (10) + 0);
 
-    switch(id%10) {
+    switch(id) {
         case 0:
             newQuote = 'The secret of getting ahead is getting started. - Mark Twain';
             break;
@@ -47,10 +45,9 @@ function getQuotes() {
 }
 
 //Event Listeners
-
 //When quote btn clicked
 document.addEventListener('DOMContentLoaded', function() {
-    var quoteButton = document.getElementById("submit"); 
+    var quoteButton = document.getElementById("quote"); 
 
     quoteButton.addEventListener("click", function() {
         getQuotes(); 

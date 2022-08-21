@@ -1,13 +1,12 @@
-var id = 0;
-
 function getTips() {
     var displayText = document.getElementById('textStatement');
     //var displaySetting = displayText.style.display;
     displayText.style.display = 'block';
     
     var newTip = '';
+    var id = Math.floor(Math.random() * (10) + 0);
 
-    switch(id%10) {
+    switch(id) {
         case 0:
             newTip = 'Space out your studying';
             break;
@@ -48,9 +47,9 @@ function getTips() {
 
 //Event Listeners
 
-//When quote btn clicked
+//When tip btn clicked
 document.addEventListener('DOMContentLoaded', function() {
-    var quoteButton = document.getElementById("submit"); 
+    var quoteButton = document.getElementById("tip"); 
 
     quoteButton.addEventListener("click", function() {
         getTips(); 
