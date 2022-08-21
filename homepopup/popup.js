@@ -15,7 +15,7 @@ changeColor.addEventListener("click", async () => {
     function: setPageBackgroundColor,
   });
 
-  // window.location.href="new.html";
+  // window.location.href="../newpopup/new.html";
 });
 
 // The body of this function will be executed as a content script inside the

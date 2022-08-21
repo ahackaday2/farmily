@@ -13,15 +13,15 @@
         "scripting",
         "notifications"
     ],
-    "options_page": "options.html",
+    "options_page": "/options/options.html",
     "action": {
-        "default_popup": "popup.html",
+        "default_popup": "/foodwater/foodwater.html",
         "default_icon": {
             "16": "/images/cow.png"
         }
     },
     "icons": {
-        "16": "/images/whee.png"
+        "16": "/images/cow.png"
     },
     "host_permissions": [
         "*://*/*"
@@ -36,7 +36,6 @@
                 "content-script.js"
             ],
             "css": [
-                "my-styles.css"
             ]
         }
     ],

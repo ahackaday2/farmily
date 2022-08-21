@@ -1,3 +1,12 @@
-.bg-img {
-    width: 250px;
-}
+body {
+    width: 300px;
+    height: 350px;
+    left: 521px;
+    top: 257px;
+  
+    background: #fbf8b5;
+    text-align: center;
+  
+    border-radius: 23px;
+  }
+  
