@@ -44,7 +44,8 @@
         {
             "resources": [
                 "images/cow.png",
-                "images/sheep.png"
+                "images/sheep.png",
+                "images/pig.png"
             ],
             "matches": [
                 "https://*/*"

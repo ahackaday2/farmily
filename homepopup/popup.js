@@ -1,38 +1,3 @@
-////////////////// CSS //////////////////
-animalRoamCss = `#farmily-animal {
-  width: 100px;
-  height: 100px;
-  left: 47vw;
-  bottom: 0px;
-
-  animation-name: animalWalk;
-  animation-duration: 5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-}
-
-@keyframes animalWalk {
-  0% {
-    transform: translateX(-50px) scaleX(1);
-  }
-  1% {
-    transform: translateX(-50px) scaleX(-1);
-  }
-
-  49% {
-    transform: translateX(50px) scaleX(-1);
-  }
-
-  50% {
-    transform: translateX(50px) scaleX(1);
-  }
-
-  100% {
-    transform: translateX(-50px) scaleX(1);
-  }
-}
-`;
-
 ////////////////// BUTTONS TO OTHER PAGES //////////////////
 
 let foodwater = document.getElementById("foodwater-btn");
@@ -78,7 +43,6 @@ freeroam.addEventListener("click", async () => {
       {
         target: { tabId: tab.id },
         files: ["freeroam/freeroam.css"],
-        // css: animalRoamCss,
       },
       () => {
         console.log("css injected");
@@ -116,16 +80,12 @@ function addAnimalToPage() {
           searchUrl = "images/cow.png";
       }
 
-      var imgURL = chrome.runtime.getURL("images/cow.png");
+      var imgURL = chrome.runtime.getURL(searchUrl);
       this.farmanimal = document.createElement("img");
       this.farmanimal.setAttribute("id", "farmily-animal");
       this.farmanimal.src = imgURL;
 
       document.body.appendChild(this.farmanimal);
-
-      // document.getElementsByTagName("section")[0].appendChild(this.cat);
-
-      // document.getElementsByTagName("img")[0].src = imgURL;
 
       var div = document.createElement("div");
       document.body.appendChild(div);
