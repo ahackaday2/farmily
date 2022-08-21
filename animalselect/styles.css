@@ -64,6 +64,8 @@ input,
 label {
     font-family: ABeeZee;
     font-size: 15px;
+    align-items: center;
+    display: flex;
 }
 
 .top {

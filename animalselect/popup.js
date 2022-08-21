@@ -39,5 +39,8 @@ window.onload = function () {
         submitButton.style.display = "none";
         chrome.storage.sync.set({ animal: animals[i] });
         chrome.storage.sync.set({ name: name.value });
+       /*  let div = document.createElement("div");
+        div.innerHTML = "You have selected " + animals[i] + " named " + name.value;
+        container.appendChild(div); */
     });
 };
