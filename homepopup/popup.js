@@ -1,3 +1,42 @@
+////////////////// CSS //////////////////
+animalRoamCss = `#farmily-animal {
+  width: 100px;
+  height: 100px;
+  left: 47vw;
+  bottom: 0px;
+
+  animation-name: animalWalk;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes animalWalk {
+  0% {
+    transform: translateX(-50px) scaleX(1);
+  }
+  1% {
+    transform: translateX(-50px) scaleX(-1);
+  }
+
+  49% {
+    transform: translateX(50px) scaleX(-1);
+  }
+
+  50% {
+    transform: translateX(50px) scaleX(1);
+  }
+
+  100% {
+    transform: translateX(-50px) scaleX(1);
+  }
+}
+`
+
+
+
+////////////////// BUTTONS TO OTHER PAGES //////////////////
+
 let foodwater = document.getElementById("foodwater-btn");
 foodwater.addEventListener("click", async () => {
   window.location.href = "../foodwater/foodwater.html";
@@ -18,6 +57,8 @@ animalselect.addEventListener("click", async () => {
   window.location.href = "../animalselect/animalselect.html";
 });
 
+
+////////////////// FREE ROAM //////////////////
 // Initialize button with user's preferred color
 let freeroam = document.getElementById("freeroam");
 
@@ -26,60 +67,82 @@ freeroam.addEventListener("click", async () => {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   console.log(tab);
   console.log("Enabling free roam on current page");
+
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    function: setPageBackgroundColor,
+    function: addAnimalToPage,
   });
+
+  // var cssUrl = chrome.runtime.getURL("/freeroam/freeroam.css");
+  // console.log(cssUrl);
+
+  console.log(tab);
+  console.log("here before")
+
+  try {
+    await chrome.scripting.insertCSS(
+      {
+        target: { tabId: tab.id },
+        files: ["freeroam/freeroam.css"],
+        // css: animalRoamCss,
+      },
+      () => {
+        console.log("css injected");
+      }
+    );
+  } catch (err) {
+    console.error(`failed to insert CSS: ${err}`);
+  }
+
+  console.log("here afeter")
+
+  
 });
 
 // The body of this function will be executed as a content script inside the
 // current page
-function setPageBackgroundColor() {
+function addAnimalToPage() {
   chrome.storage.sync.get("color", ({ color }) => {
     document.body.style.backgroundColor = color;
-    var searchUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg"
+    var searchUrl =
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg";
 
     try {
-    // get saved animal
-    chrome.storage.sync.get("animal", ({ animal }) => {
-      console.log( animal );
+      // get saved animal
+      chrome.storage.sync.get("animal", ({ animal }) => {
+        console.log(animal);
 
-      switch (animal) {
-        case "cow":
-          searchUrl = "images/cow.png";
-          break;
-        case "sheep":
-          searchUrl = "images/sheep.png";
-          break;
-        case "pig":
-          searchUrl = "images/pig.png";
-          break;
-        default:
-          searchUrl = "images/cow.png";
+        switch (animal) {
+          case "cow":
+            searchUrl = "images/cow.png";
+            break;
+          case "sheep":
+            searchUrl = "images/sheep.png";
+            break;
+          case "pig":
+            searchUrl = "images/pig.png";
+            break;
+          default:
+            searchUrl = "images/cow.png";
+        }
 
-      }
+        var imgURL = chrome.runtime.getURL("images/cow.png");
+        this.farmanimal = document.createElement("img");
+        this.farmanimal.setAttribute("id", "farmily-animal");
+        this.farmanimal.src = imgURL;
 
-      var imgURL = chrome.runtime.getURL("images/cow.png");
-      this.farmanimal = document.createElement("img");
-      this.farmanimal.setAttribute("id", "farmily-animal");
-      this.farmanimal.src = imgURL
+        document.body.appendChild(this.farmanimal);
 
-      document.body.appendChild(this.farmanimal);
-      
-      // document.getElementsByTagName("section")[0].appendChild(this.cat);
+        // document.getElementsByTagName("section")[0].appendChild(this.cat);
 
-      // document.getElementsByTagName("img")[0].src = imgURL;
+        // document.getElementsByTagName("img")[0].src = imgURL;
 
-      var div = document.createElement("div");
-      document.body.appendChild(div);
-      div.innerText = "test123";
-
-    });
-
+        var div = document.createElement("div");
+        document.body.appendChild(div);
+        div.innerText = "test123";
+      });
     } catch {
       console.log("no animal saved");
     }
-
   });
-
 }
