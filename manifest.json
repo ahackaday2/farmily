@@ -15,7 +15,7 @@
     ],
     "options_page": "/options/options.html",
     "action": {
-        "default_popup": "/foodwater/foodwater.html",
+        "default_popup": "/homepopup/popup.html",
         "default_icon": {
             "16": "/images/cow.png"
         }
