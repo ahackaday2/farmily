@@ -41,9 +41,11 @@
 
   filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
 }
+
 .btn:hover {
   background-color: #4ec23a;
 }
+
 .btn:active {
   margin-top: 12px;
   margin-bottom: 8px;

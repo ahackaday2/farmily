@@ -61,6 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var backButton = document.getElementById("back"); 
 
     backButton.addEventListener("click", function() {
-        window.location.href = "../popup.html";
+        window.location.href = "../randomiser/popup.html";
     });
 }); 
