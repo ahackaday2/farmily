@@ -4,7 +4,7 @@
     top: 521px;
     left: 257px;
 
-    background-color: bisque;
+    background-color: #fbf8b5;
 
     background-position: center 0;
     background-repeat: no-repeat;
@@ -21,14 +21,6 @@
 #header {
     text-align: center;
     font-style: oblique;
-}
-
-#jokes {
-    background-color: aquamarine;
-    margin: 5%;
-    width: 50%;
-    height: 20%;
-    font-size: 18px;
 }
 
 #textStatement {
