@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     align-items: center;
     width: 300px;
+    font-family: ABeeZee;
 }
 
 #animalSelector {
@@ -14,7 +15,7 @@ body {
     height: 100%;
 }
 
-#selectButton {
+.button {
     background-color: #44c767;
     border-radius: 28px;
     border: 1px solid #18ab29;
@@ -22,23 +23,28 @@ body {
     cursor: pointer;
     color: #ffffff;
     font-family: Arial;
-    font-size: 20px;
-    padding: 16px 31px;
+    font-size: 15px;
+    padding: 10px;
     text-decoration: none;
     text-shadow: 0px 1px 0px #2f6627;
     outline: none;
     border: none;
 }
 
-#selectButton:hover {
+.button:hover {
     background-color: #5cbf2a;
     outline: none;
     border: none;
 }
 
-#selectButton:active {
+.button:active {
     position: relative;
     top: 1px;
     outline: none;
     border: none;
+}
+
+input, label {
+  font-family: ABeeZee;
+  font-size: 15px;
 }
