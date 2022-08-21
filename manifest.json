@@ -13,14 +13,44 @@
         "scripting",
         "notifications"
     ],
-    "options_page": "options.html",
+    "options_page": "/options/options.html",
     "action": {
-        "default_popup": "popup.html",
+        "default_popup": "/homepopup/popup.html",
         "default_icon": {
-            "16": "/images/whee.png"
+            "16": "/images/cow.png"
         }
     },
     "icons": {
-        "16": "/images/whee.png"
-    }
+        "16": "/images/cow.png"
+    },
+    "host_permissions": [
+        "*://*/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "/freeroam/freeroam.js"
+            ],
+            "css": [
+                "/freeroam/freeroam.css"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "images/cow.png",
+                "images/sheep.png",
+                "images/pig.png"
+            ],
+            "matches": [
+                "https://*/*"
+            ],
+            "use_dynamic_url": true
+        }
+    ]
 }

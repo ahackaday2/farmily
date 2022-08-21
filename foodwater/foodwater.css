@@ -1,0 +1,256 @@
+/* WATER AND FOOD BARS */
+.water-bar-bg {
+  position: absolute;
+  width: 188px;
+  height: 15px;
+  left: 76px;
+  top: 235px;
+  background: #9fe8ff;
+  border-radius: 233px;
+}
+
+.water-bar {
+  position: absolute;
+  width: 82px;
+  height: 15px;
+  left: 76px;
+  top: 235px;
+  background: #40b5da;
+  border-radius: 233px;
+}
+
+.food-bar-bg {
+  position: absolute;
+  width: 188px;
+  height: 15px;
+  left: 76px;
+  top: 274px;
+  background: #bffbb5;
+  border-radius: 233px;
+}
+
+.food-bar {
+  position: absolute;
+  width: 123px;
+  height: 15px;
+  left: 76px;
+  top: 274px;
+  background: #65dd52;
+  border-radius: 233px;
+}
+
+/* foodicon */
+
+.food-icon {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 41px;
+  top: 269px;
+}
+
+/* watericon */
+
+.water-icon {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  left: 41px;
+  top: 230px;
+}
+
+/* Remember to feed the animals! */
+.instruction-txt {
+  position: absolute;
+  width: 250px;
+  height: 23px;
+  left: 48px;
+  top: 317px;
+
+  font-family: "ABeeZee";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+
+/* GRAPHIC */
+
+.farm-img {
+  position: absolute;
+  width: 193px;
+  height: 142px;
+  left: 60px;
+  top: 68px;
+}
+
+.animal-img {
+  position: absolute;
+  width: 74px;
+  height: 73.01px;
+  left: 117px;
+  top: 102px;
+
+  animation-name: animalWalk;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes animalWalk {
+  0% {
+    transform: translateX(-50px) scaleX(1);
+  }
+  1% {
+    transform: translateX(-50px) scaleX(-1);
+  }
+
+  49% {
+    transform: translateX(50px) scaleX(-1);
+  }
+
+  50% {
+    transform: translateX(50px) scaleX(1);
+  }
+
+  100% {
+    transform: translateX(-50px) scaleX(1);
+  }
+}
+
+.water-img {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  left: 183px;
+  top: 139px;
+}
+
+.food-img {
+  position: absolute;
+  width: 53px;
+  height: 53px;
+  left: 66px;
+  top: 147px;
+}
+
+/* BUTTONS */
+
+.food-btn {
+  position: absolute;
+  width: 84.68px;
+  height: 35px;
+  left: 170px;
+  top: 350px;
+
+  font-family: "ABeeZee";
+  font-size: 12px;
+
+  text-align: center;
+
+  background-color: #65dd52;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none;
+
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+}
+.food-btn:hover {
+  background-color: #4ec23a;
+}
+.food-btn:active {
+  margin-top: 2px;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
+}
+
+.water-btn {
+  position: absolute;
+  width: 86px;
+  height: 35px;
+  left: 43px;
+  top: 350px;
+
+  font-family: "ABeeZee";
+  font-size: 12px;
+
+  text-align: center;
+  background-color: #66ceed;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+
+  cursor: pointer;
+  color: #000000;
+  text-decoration: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none;
+
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+}
+.water-btn:hover {
+  background-color: #45b0d1;
+}
+.water-btn:active {
+  margin-top: 2px;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
+}
+
+
+.button {
+  margin: 10px;
+  background-color: #44c767;
+  border-radius: 28px;
+  border: 1px solid #18ab29;
+  display: inline-block;
+  cursor: pointer;
+  color: #000000;
+  font-family: "ABeeZee";
+  font-size: 15px;
+  padding: 10px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #2f6627;
+  outline: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  text-decoration: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+  background-color: #65dd52;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+
+.button:hover {
+  background-color: #4ec23a;
+  outline: none;
+  border: none;
+}
+
+.button:active {
+  margin-top: 12px;
+  margin-bottom: 8px;
+  filter: drop-shadow(0px 3px 4px rgba(0, 0, 0, 0.25));
+  outline: none;
+  border: none;
+}
