@@ -3,16 +3,24 @@
   <head>
     <link rel="stylesheet" href="popup.css" />
     <link rel="stylesheet" href="../general.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap"
+      rel="stylesheet"
+    />
     <title>HomePage</title>
   </head>
   <body>
-    <div class="popup-bg">
+    <div class="popup-container">
       <h1>Welcome FARMily!</h1>
 
-      <img class="bg-img" src="../images/bg3.png" alt="" />
-      <button>Pomodoro Timer</button>
-      <button>Food & Water reminder</button>
-      <button>ADD</button>
+      <img class="farm-bg" src="../images/bg2.png" alt="" />
+
+      <div id="pomodoro-btn" class="btn"><p>Pomodoro Timer</p></div>
+      <div id="foodwater-btn" class="btn"><p>Food & Water reminder</p></div>
+      <div id="jokes-btn" class="btn"><p>Motivational Jokes</p></div>
 
       <button id="changeColor" class="current">Test</button>
 

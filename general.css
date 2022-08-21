@@ -1,12 +1,21 @@
 body {
-    width: 300px;
-    height: 350px;
-    left: 521px;
-    top: 257px;
-  
-    background: #fbf8b5;
-    text-align: center;
-  
-    border-radius: 23px;
-  }
-  
+  width: 300px;
+  height: 350px;
+  left: 521px;
+  top: 257px;
+
+  background: #fbf8b5;
+  text-align: center;
+
+  border-radius: 23px;
+  font-family: "ABeeZee";
+
+}
+
+.farm-bg {
+  width: 193px;
+  height: 142px;
+  left: 60px;
+  top: 18px;
+}
+
