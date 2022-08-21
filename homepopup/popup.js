@@ -18,45 +18,62 @@ animalselect.addEventListener("click", async () => {
   window.location.href = "../animalselect/animalselect.html";
 });
 
-// // Initialize button with user's preferred color
-// let changeColor = document.getElementById("changeColor");
+// Initialize button with user's preferred color
+let freeroam = document.getElementById("freeroam");
 
-// chrome.storage.sync.get("color", ({ color }) => {
-//   changeColor.style.backgroundColor = color;
-// });
+// When the button is clicked, inject setPageBackgroundColor into current page
+freeroam.addEventListener("click", async () => {
+  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  console.log(tab);
+  console.log("Enabling free roam on current page");
+  chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: setPageBackgroundColor,
+  });
 
-// // When the button is clicked, inject setPageBackgroundColor into current page
-// changeColor.addEventListener("click", async () => {
-//   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-//   console.log(tab);
-//   console.log("We tried");
-//   chrome.scripting.executeScript({
-//     target: { tabId: tab.id },
-//     function: setPageBackgroundColor,
-//   });
+  // window.location.href="../newpopup/new.html";
+});
 
-//   // window.location.href="../newpopup/new.html";
-// });
+// The body of this function will be executed as a content script inside the
+// current page
+function setPageBackgroundColor() {
+  chrome.storage.sync.get("color", ({ color }) => {
+    document.body.style.backgroundColor = color;
 
-// // The body of this function will be executed as a content script inside the
-// // current page
-// function setPageBackgroundColor() {
-//   chrome.storage.sync.get("color", ({ color }) => {
-//     document.body.style.backgroundColor = color;
+    // get saved animal
+    await chrome.storage.sync.get("animal", ({ animal }) => {
+      console.log( animal );
 
-//     // var imgURL = chrome.extension.getURL('images/cow.png')
-//     var imgURL = chrome.runtime.getURL("images/cow.png");
-//     document.getElementsByTagName("img")[0].src = imgURL;
+      switch (animal) {
+        case "cow":
+          searchUrl = "images/cow.png";
+          break;
+        case "sheep":
+          searchUrl = "images/sheep.png";
+          break;
+        case "pig":
+          searchUrl = "images/pig.png";
+          break;
+        default:
+          searchUrl = "images/cow.png";
 
-//     this.cat = document.createElement("img");
-//     this.cat.setAttribute("id", "kittyDiv");
-//     this.cat.src = imgURL
-//     // this.cat.src = chrome.runtime.getURL("images/sheep.png");
+      }
 
-//     document.getElementsByTagName("section")[0].appendChild(this.cat);
+      var imgURL = chrome.runtime.getURL(searchUrl);
+      document.getElementsByTagName("img")[0].src = imgURL;
 
-//     var div = document.createElement("div");
-//     document.body.appendChild(div);
-//     div.innerText = "test123";
-//   });
-// }
+    });
+
+
+    this.cat = document.createElement("img");
+    this.cat.setAttribute("id", "farmily-animal");
+    this.cat.src = imgURL
+    // this.cat.src = chrome.runtime.getURL("images/sheep.png");
+
+    document.getElementsByTagName("section")[0].appendChild(this.cat);
+
+    var div = document.createElement("div");
+    document.body.appendChild(div);
+    div.innerText = "test123";
+  });
+}
