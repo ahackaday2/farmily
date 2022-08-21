@@ -18,9 +18,21 @@
     text-align: center;
 }
 
+.animal-img {
+    position: absolute;
+    width: 74px;
+    height: 73.01px;
+    left: 117px;
+    top: 52px;
+  
+    animation-name: animalWalk;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
 #header {
     text-align: center;
-
     font-size: 18px;
 }
 
