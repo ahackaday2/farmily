@@ -41,36 +41,39 @@ function setPageBackgroundColor() {
     document.body.style.backgroundColor = color;
 
     // get saved animal
-    await chrome.storage.sync.get("animal", ({ animal }) => {
-      console.log( animal );
-
-      switch (animal) {
-        case "cow":
-          searchUrl = "images/cow.png";
-          break;
-        case "sheep":
-          searchUrl = "images/sheep.png";
-          break;
-        case "pig":
-          searchUrl = "images/pig.png";
-          break;
-        default:
-          searchUrl = "images/cow.png";
-
-      }
-
-      var imgURL = chrome.runtime.getURL(searchUrl);
-      document.getElementsByTagName("img")[0].src = imgURL;
-
-    });
-
-
-    this.cat = document.createElement("img");
-    this.cat.setAttribute("id", "farmily-animal");
-    this.cat.src = imgURL
-    // this.cat.src = chrome.runtime.getURL("images/sheep.png");
-
-    document.getElementsByTagName("section")[0].appendChild(this.cat);
+    try {
+      chrome.storage.sync.get("animal", ({ animal }) => {
+        console.log( animal );
+  
+        switch (animal) {
+          case "cow":
+            searchUrl = "images/cow.png";
+            break;
+          case "sheep":
+            searchUrl = "images/sheep.png";
+            break;
+          case "pig":
+            searchUrl = "images/pig.png";
+            break;
+          default:
+            searchUrl = "images/cow.png";
+  
+        }
+  
+        var imgURL = chrome.runtime.getURL(searchUrl);
+        document.getElementsByTagName("img")[0].src = imgURL;
+  
+        this.cat = document.createElement("img");
+        this.cat.setAttribute("id", "farmily-animal");
+        this.cat.src = imgURL
+        // this.cat.src = chrome.runtime.getURL("images/sheep.png");
+    
+        document.getElementsByTagName("section")[0].appendChild(this.cat);
+    
+      });
+    } catch {
+      console.log("no animal saved");
+    }
 
     var div = document.createElement("div");
     document.body.appendChild(div);
