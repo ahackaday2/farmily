@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Bootstrap CSS -->
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=ABeeZee&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- My JS -->
+    <script src="main.js"></script>
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Google Font: Pacificio -->
+    <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+    rel="stylesheet"
+    />
+    <title>FARMily Pomodoro App</title>
+  </head>
+  <!-- Onload; template() is in main.js-->
+  <body id="myTemplate">
+    <script src="main.js"></script>
+    <div class="container">
+      <!-- Heading -->
+      <h1 class="text-center my-2 heading">Pomodoro Timer</h1>
+
+      <!-- Main Timer -->
+      <div class="container timer justify-content-center align-items-center">
+        <div class="row">
+          <div class="col-2">
+            <h4 id="minutes"></h4>
+          </div>
+          <div class="col" width>
+            <h4>:</h4>
+          </div>
+          <div class="col-2">
+            <h4 id="seconds"></h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Finished Message/When the timer is done -->
+      <div class="my-5">
+        <h3 id="done" class="text-center"></h3>
+      </div>
+
+      <!-- Start Button and reset button-->
+      <!-- d-flex justify-content-center is another way to justify everything-->
+      <div class="container d-flex justify-content-center align-items-center my-5">
+        <!-- Start Timer when click button-->
+        <a href="../homepopup/popup.html">
+          <!-- 2x so that redo icon is bigger-->
+          <img class="fa-return" src="../images/barn.png" height ="80" width="80"/>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

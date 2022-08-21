@@ -1,0 +1,66 @@
+/* Body background and font */
+body {
+  background: #fbf8b5;
+  text-align: center;
+  width: 300px;
+  height: 350px;
+  left: 521px;
+  top: 257px;
+  border-radius: 23px;
+  font-family: "ABeeZee";
+}
+
+/* Main heading */
+.heading {
+  color: #000000;
+}
+
+/* Countdown timer */
+.timer {
+  text-align: center;
+  width: 10rem;
+  height: 10rem;
+  border: 5px solid #000;
+  border-radius: 10rem;
+  display: flex;
+  justify-content: center; /*horizontally*/
+  align-items: center; /*vertically*/
+}
+
+/* So that the data inside the circle is not overflowing */
+.row {
+  width: 100%;
+}
+
+/* remove the padding on the play button */
+.btn {
+  padding: 0;
+}
+
+/* play and reset icons */
+.fa-play,
+.fa-redo-alt,
+.fa-return {
+  border: 2px solid transparent;
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.fa-play:hover,
+.fa-redo-alt:hover,
+.fa-return:hover {
+  color: #51e5e5;
+  border: 2px solid #000000;
+  transition: 0.3s ease;
+}
+
+/* Dynamic class */
+/* Make the message visible */
+.show_message {
+  display: block;
+  padding: 1rem 0;
+  color: #272343;
+  background: #e3f6f5;
+  border-radius: 0.5rem;
+  transition: 0.5s ease;
+}
